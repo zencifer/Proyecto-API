@@ -41,7 +41,7 @@ app.get('/usuarios', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor activo en http:/localhost:${port}`);
+    console.log(`Servidor activo en http://localhost:${port}`);
 });
 
 
