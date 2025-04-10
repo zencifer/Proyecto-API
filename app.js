@@ -7,6 +7,7 @@ const port = 3000;
 app.use(express.urlencoded({ extended: true })); // Para leer formularios
 app.use(express.static(path.join(__dirname, 'public'))); // Servir HTML
 
+// Registraremos un usuario nuevo
 app.post('/registrar', (req, res) => {
     const { nombre, apellido } = req.body;
 
@@ -33,7 +34,7 @@ app.delete('/usuarios/:id', (req, res) => {
     res.send(`Usuario con ID ${id} eliminado`);
 });
 
-
+// Obtenemos los usuarios actuales de la tabla
 app.get('/usuarios', (req, res) => {
     const rows = db.prepare('SELECT * FROM users').all();
     res.json(rows);
